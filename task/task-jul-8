@@ -1,0 +1,90 @@
+Day 1 — Project setup & route planning
+Setup
+Create a new Vite + React + TypeScript project
+Install: react-router, tailwindcss
+Create this folder structure:
+src/
+  layouts/
+    PublicLayout.tsx
+    DashboardLayout.tsx
+    AuthLayout.tsx
+  pages/
+    public/
+      Home.tsx
+      About.tsx
+      Events.tsx
+    dashboard/
+      Overview.tsx
+      Profile.tsx
+      Settings.tsx
+    auth/
+      Login.tsx
+      Register.tsx
+  components/
+    layout/
+      PublicNavbar.tsx
+      PublicFooter.tsx
+      DashboardSidebar.tsx
+      DashboardHeader.tsx
+      AuthCard.tsx
+  App.tsx
+  main.tsx
+Planning exercise (submit before coding layouts)
+Draw a route tree like this:
+
+/  → PublicLayout
+  ├── index        → Home
+  ├── about        → About
+  └── events       → Events
+/dashboard  → DashboardLayout
+  ├── index        → Overview
+  ├── profile      → Profile
+  └── settings     → Settings
+/login     → AuthLayout → Login
+/register  → AuthLayout → Register
+Answer in writing:
+
+Why should /login not use PublicLayout?
+What renders when you visit /dashboard?
+What is the purpose of <Outlet />?
+Deliverable: Route tree diagram + short written answers (½ page).
+
+Day 2 — Design the three layouts
+Before writing much code, design all three layouts. Use Figma, Excalidraw, or pen and paper.
+
+Layout 1: PublicLayout (marketing site)
+Sections:
+
+Navbar: Logo “Campus Connect”, links: Home, About, Events, Login button
+Main: <Outlet /> for page content
+Footer: Copyright, quick links, contact email
+Design notes:
+
+Clean, welcoming, light background
+Full-width hero area on Home
+Navbar sticky at top
+Layout 2: DashboardLayout (app shell)
+Sections:
+
+Sidebar (left): Logo, nav links: Overview, Profile, Settings, Logout (fake)
+Header (top): Page title area + user avatar placeholder
+Main: <Outlet /> for dashboard pages
+Design notes:
+
+Sidebar fixed on desktop; collapses to hamburger on mobile
+Different color scheme from public site (e.g. darker sidebar)
+Active sidebar link clearly highlighted
+Layout 3: AuthLayout (login/register)
+Sections:
+
+Centered card on a simple background
+Logo at top of card
+<Outlet /> inside card for Login or Register form
+Small link below card: “Back to home”
+Design notes:
+
+No navbar, no footer, no sidebar
+Minimal distractions
+Same card wrapper for both Login and Register
+Deliverable: 3 wireframes (one per layout) + 2–3 sentences explaining your design choices.
+
