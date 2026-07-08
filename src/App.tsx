@@ -1,21 +1,52 @@
-import { Button } from "@/components/ui/button"
-
+import { createBrowserRouter } from "react-router"
+import { RouterProvider } from "react-router/dom"
+import RootLayout from "./Layouts/RootLayout"
+import Home from "./Pages/Home"
+import About from "./Pages/About"
+import Login from "./Pages/auth/Login"
+import Signup from "./Pages/auth/SIgnup"
+import Products from "./Pages/Products"
+import Shoe from "./Pages/Shoe"
 export function App() {
-  return (
-    <div className="flex min-h-svh p-6">
-      <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-        <div>
-          <h1 className="font-medium">Project ready!</h1>
-          <p>You may now add components and start building.</p>
-          <p>We&apos;ve already added the button component for you.</p>
-          <Button className="mt-2">Button</Button>
-        </div>
-        <div className="font-mono text-xs text-muted-foreground">
-          (Press <kbd>d</kbd> to toggle dark mode)
-        </div>
-      </div>
-    </div>
-  )
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      Component: RootLayout,
+      children: [
+        {
+          index: true,
+          Component: Home,
+        },
+        {
+          path: "about",
+          Component: About,
+        },
+        {
+          path: "products",
+          children: [
+            {
+              index: true,
+              Component: Products,
+            },
+            {
+              path: "shoe",
+              Component: Shoe,
+            },
+          ],
+        },
+      ],
+    },
+    {
+      path: "login",
+      Component: Login,
+    },
+    {
+      path: "signup",
+      Component: Signup,
+    },
+  ])
+
+  return <RouterProvider router={router} />
 }
 
 export default App
