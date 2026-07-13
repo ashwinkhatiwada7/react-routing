@@ -1,0 +1,12 @@
+Task Requirements
+
+Fetch and display a list of posts (GET)
+Add a new post via a form (POST)
+Edit an existing post (PUT)
+Delete a post (DELETE)
+Every request should show a loading state and handle errors
+Use async/await — no .then() chains
+
+
+mock api url
+https://6a5472798547b9f7111c45e1.mockapi.io/api/v1/
