@@ -10,3 +10,7 @@ Use async/await — no .then() chains
 
 mock api url
 https://6a5472798547b9f7111c45e1.mockapi.io/api/v1/
+
+day1
+ 1. /add-article
+ 2.shadcn form ( react-hook-form, zod, , field) 
